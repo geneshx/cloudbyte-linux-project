@@ -1,0 +1,21 @@
+4 groups were created:
+engineering
+marketing
+operations
+admins
+
+12 Users were created:
+User					Department
+alice, bob, carol, dave			Engineering
+emma, frank, grace			Marketing
+henry, iris, jack, kate, leo		Operations
+kate, leo				Admins
+
+Directory tree:
+/shared/
+├── engineering/       engineering group, mode 770
+├── marketing/         marketing group,   mode 770
+├── operations/        operations group,  mode 770
+└── company-docs/      admins group,      mode 775
+/logs/
+└── reports/           admins group,      mode 775
