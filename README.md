@@ -169,7 +169,7 @@ the VM with:
     # Lima: repo is mounted at /host inside the VM
     bash /host/verify-backup.sh
 
-## Section 6: EC2 Deployment
+## Sections 5-6: EC2 Deployment
 
 Deployed the CloudByte server to a t3.micro Amazon Linux 2023 EC2 instance.
 Rebuilt the four groups, the twelve users (kate and leo dual-grouped into
@@ -182,4 +182,13 @@ Files added this section:
 - `verify-ec2.sh`: runs on EC2, checks the whole deployment from scratch.
 - `data/cloudbyte-users.csv`: the twelve-staffer production roster.
 - `docs/differences-log.txt`: local-VM-versus-EC2 reflection.
+
+## Section 7: Log Analysis Tools
+
+Built two log-analysis scripts on the EC2 server. `log-generator.sh` fabricates a
+synthetic application log at `/logs/cloudbyte-app.log` with weighted severity
+levels spread across the day. `analyse-logs.sh` summarises it into a timestamped
+report under `/logs/reports/`: counts by severity, the busiest hour, and every
+CRITICAL entry, using a `sort | uniq -c | sort -rn` pipeline. Scheduled the
+analysis hourly via cron, and added `verify-logs.sh` to check the lot.
 
