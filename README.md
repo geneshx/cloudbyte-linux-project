@@ -26,17 +26,8 @@ tools that automate onboarding, backups, log analysis, and system-health reporti
 
 ## Repository layout map
 
-linux-project/
-├── README.md
-├── scripts/
-│   ├── onboard-user.sh      # interactive/CSV user onboarding
-│   ├── backup-shared.sh     # date-stamped /shared backups
-│   ├── cleanup-backups.sh   # retention with --preview
-│   ├── log-generator.sh     # simulated application log
-│   ├── analyse-logs.sh      # severity counts, worst hour, criticals
-│   └── system-health.sh     # uptime/cpu/mem/disk report with alerts
-├── verify-*.sh              # per-section self-check scripts
-└── differences-log.txt      # local-vs-EC2 adaptation notes
+<img width="485" height="238" alt="image" src="https://github.com/user-attachments/assets/341e56bd-ccf7-47ee-a1f0-d02c1dfefad3" />
+
 
 \## Section 1: Server Foundations
 
