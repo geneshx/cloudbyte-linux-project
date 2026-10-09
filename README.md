@@ -4,9 +4,9 @@
 
 A Linux system administration project, built from scratch on a local VM 
 
-(Amazon Linux 2023)and later deployed to AWS EC2. The scenario is CloudByte Solutions, a
+(Amazon Linux 2023) and later deployed to AWS EC2. The scenario is CloudByte Solutions, 
 
-fictional 12-person startup that needs a properly configured multi-user
+a fictional 12-person startup that needs a properly configured multi-user
 
 Linux server: Users and groups, permission-controlled shared storage, and a set of bash 
 
