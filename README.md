@@ -2,15 +2,42 @@
 
 
 
-A Linux system administration project, built first on a local VM
+A Linux system administration project, built from scratch on a local VM 
 
-and later deployed to AWS EC2. The scenario is CloudByte Solutions, a
+(Amazon Linux 2023)and later deployed to AWS EC2. The scenario is CloudByte Solutions, a
 
 fictional 12-person startup that needs a properly configured multi-user
 
-Linux server: user accounts, group-based file access, automated backups,
+Linux server: Users and groups, permission-controlled shared storage, and a set of bash 
 
-log analysis, and system health reporting.
+tools that automate onboarding, backups, log analysis, and system-health reporting.
+
+
+## Skills demonstrated
+
+- User and group administration; permission models and least-privilege design
+
+- Bash automation: onboarding, backups, log generation and analysis, health reporting
+
+- Scheduling with cron; reading and parsing log files
+
+- Deploying and operating a remote server over SSH on AWS EC2
+
+
+## Repository layout map
+
+
+linux-project/
+├── README.md
+├── scripts/
+│   ├── onboard-user.sh      # interactive/CSV user onboarding
+│   ├── backup-shared.sh     # date-stamped /shared backups
+│   ├── cleanup-backups.sh   # retention with --preview
+│   ├── log-generator.sh     # simulated application log
+│   ├── analyse-logs.sh      # severity counts, worst hour, criticals
+│   └── system-health.sh     # uptime/cpu/mem/disk report with alerts
+├── verify-*.sh              # per-section self-check scripts
+└── differences-log.txt      # local-vs-EC2 adaptation notes
 
 
 
@@ -80,10 +107,6 @@ log in one go. Run it on the VM with:
 
 
 
-&#x20;   # Track 2 (Lima): repo is mounted at /host inside the VM
-
-&#x20;   bash /host/verify-foundations.sh
-
 ## Section 2: File Management and Permissions
 
 Hardened the team folders and added a shared dropbox. Setgid makes team
@@ -107,8 +130,6 @@ files, and setgid propagation. Run it on the VM with:
     # Track 1 (Vagrant): repo is mounted at /vagrant
     bash /vagrant/verify-permissions.sh
 
-    # Track 2 (Lima): repo is mounted at /host inside the VM
-    bash /host/verify-permissions.sh
 
 ## Section 3: User Onboarding Automation
 
@@ -137,8 +158,6 @@ prints a ✅ or ❌ for each requirement. Run it on the VM with:
     # Track 1 (Vagrant): repo is mounted at /vagrant
     bash /vagrant/verify-onboarding.sh
 
-    # Track 2 (Lima): repo is mounted at /host inside the VM
-    bash /host/verify-onboarding.sh
 
 ## Section 4: Backup Automation
 
@@ -166,8 +185,6 @@ the VM with:
     # Vagrant: repo is mounted at /vagrant
     bash /vagrant/verify-backup.sh
 
-    # Lima: repo is mounted at /host inside the VM
-    bash /host/verify-backup.sh
 
 ## Sections 5-6: EC2 Deployment
 
