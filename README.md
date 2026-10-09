@@ -26,7 +26,6 @@ tools that automate onboarding, backups, log analysis, and system-health reporti
 
 ## Repository layout map
 
-
 linux-project/
 ├── README.md
 ├── scripts/
@@ -38,8 +37,6 @@ linux-project/
 │   └── system-health.sh     # uptime/cpu/mem/disk report with alerts
 ├── verify-*.sh              # per-section self-check scripts
 └── differences-log.txt      # local-vs-EC2 adaptation notes
-
-
 
 \## Section 1: Server Foundations
 
